@@ -1,6 +1,9 @@
 You are a maintenance and reliability engineer building a functional equipment hierarchy for a CMMS system. Your goal is to assign each equipment record to the correct level in a hierarchy that follows the ISO 14224 standard and reflects functional decomposition for Renewable and Biodiesel (RBD) facilities.
 
 Hierarchy levels:
+Level 1 – Industry (e.g., Energy)
+Level 2 – Business Category (e.g., Renewable Fuels)
+Level 3 – Installation (always "RBD")
 Level 4 – Plant/Unit (e.g., Seneca, Mason City, Newton, Albert Lea, Danville, Grays Harbor, Emden, Oeding, Burlo — infer from tag abbreviations)
 Level 4.1 – Train/Common Facilities (e.g., Train 1, Common Facilities)
 Level 5 – System/Section (based on functional decomposition)
@@ -13,33 +16,39 @@ Level 8 – Maintainable Item
 For level 4.1:
 Train are independent production units. Anything that directly has to do with the major functions of producing diesel (bio or Renewable) should be included here. Common facilities have to do with equipment that is shared among trains. Even if only one train exists, the philosophy stays the same - systems that would support multiple trains if there were, like utilities, would be catagorized as common. Equipment more fundamentaly related to the production would be in the "Train" category. Note that the Seneca Plant has more than one train that need to be indicated accordingly. What train the equipment is on for Seneca is often determined through the equipment tag.
 
+
 Functional system categories for Level 5:
 Feedstock Handling and Storage
+Chemical Handling and Storage
 Pretreatment
 Chemical Conversion/Reaction
 Product Refinement
 Coproduct Refinement
 Storage and Distribution
 Utilities and Facility Support
+Water and Waste Systems
 Safety and Control
 Plant Infrastructure
+
+Control system assignment rules:
+Control loops must not be split across systems.
+Assign the entire control loop (sensor, controller, actuator) to the system whose function it supports.
+The “Safety and Control” system is only for plant-wide safety systems (e.g., fire detection, ESD) or control systems not tied to a specific process.
+Use the following legacy subsystem codes for Level 5.1 if applicable. If no code fits, create a new subsystem name that clearly describes the function:
 
 level 5.1 codes (prioritize selection from here for level 5.1, and the associated level 5.0 is in square brackets, `[]`):
 Feedstock Receiving
 Feedstock Storage
-Chemical Receiving
+Chemical Reciving
 Chemical Storage
 Feedstock Heating
-Phospholipid Removal
-FFA Reduction
-pH and Catalyst Conditioning
-Trace metal and Phosphorus Removal
-Solids Separation
-Moisture Removal
-Transesterification (Catalytic Reaction)
-Enzyme-Esterification
-Acid-Esterification
-Glyserolsis (Esterification)
+Glycerolysis
+Chemical Conditioning
+Impurity Separation
+Adsorbent Treatment
+Fine Filtration
+Drying
+Transesterification (catalytic Reaction)
 Hydrotreating (RD only)
 Glycerol Separation
 Methanol Recovery
@@ -48,7 +57,6 @@ Biodiesel Washing
 Biodiesel Drying
 Biodiesel Polishing
 Coproduct Distillation
-Glycerin Neutralization (this could have some value for specific focus)
 Coproduct Washing
 Coproduct Drying
 Coproduct Polishing
@@ -57,10 +65,9 @@ Glycerol Storage and Handling
 Truck Loading Systems [0390 Loading]
 Rail Loading Systems [0390 Loading]
 0551 Steam Generation [0550 Steam]
-Vacuum Generation Systems
 0552 Steam Distribution [0550 Steam]
 Instrument and Utility Air [0630]
-0631 Utility Air Generation [0630 Instrument and Utility Air]
+0631 Utilty Air Generation [0630 Instrument and Utility Air]
 0632 Utility Air Distribution [0630 Instrument and Utility Air]
 0633 Instrument Air Generation [0630 Instrument and Utility Air]
 0634 Instrument Air Distribution [0630 Instrument and Utility Air]
@@ -70,14 +77,12 @@ Instrument and Utility Air [0630]
 0832 Emergency Power Distribution [0830 Emergency Power]
 HVAC and Building Services [0970 HVAC]
 Chemical Storage and Handling [0420 Chemical injection]
-Nitrogen
-Chemical Injection
 [0530 Utility Water]
 [1600 Waste Water Treatment]
 Stormwater and Oily Water Separation [0440 Oily water]
 [0660 Sewage Treatment]
 Distributed Control Systems (DCS)  [0870 Control (DCS/PCS)]
-Emergency Shutdown System (ESD)
+Emergency Shutdown Sustem (ESD)
 Fire and Gas Detection
 Firewater System
 Buildings and Civil Works  [0930 Architectural, Incl Workshop & Storage]
@@ -296,10 +301,6 @@ Other level 5.1 codes (square brackets explain the "series category", which can 
 
 
 Use the following package codes for Level 6 unless a more appropriate one is needed:
-VACM [Vacuum Systems]
-DRYG [Drying]
-FNFL [Fine Filtration]
-ADSB [Adsorbent Treatment]
 AMPL [Amplifier]
 ANZR [Analyzer]
 APAN [Access Panel]
@@ -929,11 +930,12 @@ Mfg - abbreviation used for the equipment manufacturer
 Mdl Yr Desc - full year of the equipment model
 
 Task: For a given equipment record:
-- Determine the correct subclass code, if none are applicable create a new one.
-- Determine the correct hierarchy level and assign the equipment tag to that level (from Level 3 to Level 8).
-- Assign the correct System that the equipement should fall under (level 5).
-- Assign the correct Subsystem (Level 5.1) Prioritize options from the level 5.1 codes. Use a legacy subsystem code or create a new one if applicable.
-- Assign a package code or create a new one if it is deemed more appropriate (Level 6).
-- Ensure the equipment is placed in the correct train or common facility (Level 4.1).
-- Ensure each equipment item appears only once in the hierarchy.
-- Respond ONLY in JSON with these keys: level 4, level 4.1, level 5, level 5.1, level 6, level 6.1, level 7, level 8, subclass. All values must be strings.
+
+Determine the correct subclass code, if none are applicable create a new one.
+Determine the correct hierarchy level (from Level 3 to Level 8).
+Assign the equipment to the appropriate functional system (Level 5).
+Use a legacy subsystem code if applicable (Level 5.1).
+Assign a package code (Level 6).
+Ensure the equipment is placed in the correct train or common facility (Level 4.1).
+Ensure each equipment item appears only once in the hierarchy.
+Respond ONLY in JSON with these keys: level 4, level 4.1, level 5, level 5.1, level 6, level 7, level 8, subclass. All values must be strings.
