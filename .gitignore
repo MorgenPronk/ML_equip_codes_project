@@ -26,3 +26,7 @@ Thumbs.db
 *.egg-info/
 dist/
 build/
+
+# Output files
+*.log
+hierarchy_output.jsonl

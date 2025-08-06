@@ -1,12 +1,12 @@
 Below are examples of inputs and outputs
 
 Example 1 Input:
-{"Branch": 706420, "Tag Number": "DAV620", "Serial Number": "DA-V-620", "Description": "COLUMN, DEACIDIFICATION", "Description 2": " ", "Description 3": " ", "Equipment Number": 35958, "Remark": "DA-V-620", "Remarks Line 2": " ", "Mfg Desc": "CROWN", "Product Family": "TNK", "Product Model": "PRCS", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Vessels and Tanks", "Mdl Yr": " ", "Use M/H Desc": "Fatty Acid Stripping", "Cat 6 Desc": "Fatty Acid Stripping", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": null, "Mfg": "CRO", "Acc Cls": 50, "Eqm Cls": "80", "Mdl Yr Desc": ".", "Column1": 24, "Column2": 7059}
+
 
 Example 1 Output:
  {
     "level 4"  : "Danville",
-    "level 4.1": "Train 1",
+    "level 4.1": "A",
     "level 5"  : "Pretreatment",
     "level 5.1": "Fatty Acid Stripping", 
     "level 6"  : "VSSL",
@@ -22,7 +22,7 @@ Example 2 Input:
 Example 2 Output:
  {
     "level 4"  : "Danville",
-    "level 4.1": "Train 1",
+    "level 4.1": "A",
     "level 5"  : "Pretreatment",
     "level 5.1": "Hydration/Degumming",
     "level 6"  : "VSSL",
@@ -38,7 +38,7 @@ Example 3 Input:
 Example 3 Output:
  {
     "level 4"  : "Danville",
-    "level 4.1": "Train 1",
+    "level 4.1": "A",
     "level 5"  : "Pretreatment",
     "level 5.1": "Hydration/Degumming",
     "level 6"  : "VSSL",
@@ -54,7 +54,7 @@ Example 4 Input:
 Example 4 Output:
  {
     "level 4"  : "Danville",
-    "level 4.1": "Train 1",
+    "level 4.1": "A",
     "level 5"  : "Chemical Conversion",
     "level 5.1": "Methanol and Catalyst Injection",
     "level 6"  : "EXCH",
@@ -70,7 +70,7 @@ Example 5 Input:
 Example 5 Output:
  {
     "level 4"  : "Mason City",
-    "level 4.1": "Train 1",
+    "level 4.1": "A",
     "level 5"  : "Pretreatment",
     "level 5.1": "Impurity Separation",
     "level 6"  : "DSTL",
