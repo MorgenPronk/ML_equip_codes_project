@@ -1,7 +1,9 @@
 import pandas as pd
 
 # Load mapped examples file (output structure)
-mapped_df = pd.read_excel("./data/examples_mapped.xlsx", engine="openpyxl")
+mapped_df = pd.read_excel("./data/examples_mapped.xlsx",
+                          engine="openpyxl",
+                          dtype=str)
 mapped_df = mapped_df.dropna(how="all")
 mapped_df.columns = mapped_df.columns.str.strip().str.lower()  # Clean column names
 # print(mapped_df.head()) # debugging
@@ -39,12 +41,15 @@ with open("./prompts/hierarchy_examples.txt", "w", encoding="utf-8") as f:
             f.write(str(input_fields).replace("'", '"') + "\n\n")
 
             # Format Output
-            output_fields = {col: ("" if pd.isna(row[col]) else row[col]) for col in output_columns}
+            output_fields = {
+                col: str(row[col]).strip() if not pd.isna(row[col]) else ""
+                for col in output_columns
+            }
+
             f.write(f"Example {example_count} Output:\n")
             f.write(" {\n")
-            for key, val in output_fields.items():
-                f.write(f'    "{key}"  : "{val}",\n')
-            f.seek(f.tell() - 2, 0)  # Remove last comma
+            lines = [f'    "{key}"  : "{val}"' for key, val in output_fields.items()]
+            f.write(",\n".join(lines))
             f.write("\n }\n\n")
 
             example_count += 1

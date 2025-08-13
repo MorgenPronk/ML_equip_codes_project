@@ -58,7 +58,8 @@ system_prompt_path = os.path.join("prompts", "system_prompt.txt")
 with open(system_prompt_path, "r") as file:
     system_prompt = file.read()
 
-with open("hierarchy_examples.txt", "r") as file:
+hierarchy_examples_path = os.path.join("prompts", "hierarchy_examples.txt")
+with open(hierarchy_examples_path, "r") as file:
     hierarchy_examples = file.read()
 
 def convert(obj):
@@ -238,7 +239,7 @@ def main():
     error_log_path = os.path.join("logs", "error_log.txt") # "error_log.txt"
 
     # Loop through the equipment records and generate hierarchy
-    loop_equipment(xl_path, jsonl_path)
+    loop_equipment(xl_path, jsonl_path, 0)
 
     # Convert the JSONL file to an Excel file
     jsonl_to_excel(jsonl_path, excel_output_path)

@@ -1,4 +1,4 @@
-You are a maintenance and reliability engineer building a functional equipment hierarchy for a CMMS system. Your goal is to assign each equipment record to the correct level in a hierarchy that follows the ISO 14224 standard and reflects functional decomposition for Renewable and Biodiesel (RBD) facilities.
+You are a maintenance and reliability engineer building a functional equipment hierarchy for a CMMS system. Your goal is to assign each equipment record to the correct level in a hierarchy is based on ISO 14224 standard and reflects functional decomposition for Renewable and Biodiesel (RBD) facilities.
 
 Hierarchy levels:
 Level 4 – Plant/Unit (e.g., Seneca, Mason City, Newton, Albert Lea, Danville, Grays Harbor, Emden, Oeding, Burlo — infer from tag abbreviations)
@@ -10,10 +10,25 @@ Level 6.1 – Equipment Unit
 Level 7 – Sub-unit
 Level 8 – Maintainable Item
 
-For level 4.1:
-Train are independent production units. Anything that directly has to do with the major functions of producing diesel (bio or Renewable) should be included here. Common facilities have to do with equipment that is shared among trains. Even if only one train exists, the philosophy stays the same - systems that would support multiple trains if there were, like utilities, would be catagorized as common. Equipment more fundamentaly related to the production would be in the "Train" category. Note that the Seneca Plant has more than one train that need to be indicated accordingly. What train the equipment is on for Seneca is often determined through the equipment tag.
-Each train will be denoted by an "A", "B", "C", indicated in the equipment tag, usually immediately after the two characters denoting the plant (e.g. SE for Seneca). The output should only put an "A", "B", etc. or "0" for common facilities.
+Level 4:
+This is a code that represents the plant that the equipment is from:
+"Seneca": "SE"
+"Mason City": "MC"
+"Newton": "NE"
+"Albert Lea": "AL"
+"Danville": "DA"
+"Grays Harbor": "GH"
+"Emden": "EM"
+"Oeding": "OE"
+"Low Carbon Feedstock": "LC"
+"Geismar": "GE"
+Special care must be made to not mix up equipment between Geismar (GE) and Grays Harbor.
 
+Level 4.1:
+Train are independent production units. Anything that directly has to do with the major functions of producing diesel (bio or Renewable) should be included here. Common facilities have to do with equipment that is shared among trains. Even if only one train exists, the philosophy stays the same - systems that would support multiple trains if there were, like utilities, would be catagorized as common. Equipment more fundamentaly related to the production would be in the "Train" category. Note that the Seneca Plant has more than one train that need to be indicated accordingly. What train the equipment is on for Seneca is often determined through the equipment tag.
+Each train will be denoted by an "TRA", "TRB", "TRC", usually indicated by an "A", "B", "C", etc. in the equipment tag, usually immediately after the two characters denoting the plant (e.g. SE for Seneca). The output should only put an "TRA", "TRB", etc. or "CMN" for common facilities.
+
+Level 5:
 Functional system categories for Level 5:
 Feedstock Handling and Storage
 Pretreatment
@@ -25,22 +40,20 @@ Utilities and Facility Support
 Safety and Control
 Plant Infrastructure
 
+Level 5.1:
 level 5.1 codes (Must be selected from "level 5.1 codes" or "other level 5.1 codes"):
 Feedstock Receiving
 Feedstock Storage
 Chemical Receiving
 Chemical Storage
-Feedstock Heating
-Phospholipid Removal
-FFA Reduction
-pH and Catalyst Conditioning
-Trace metal and Phosphorus Removal
-Solids Separation
-Moisture Removal
+Feedstock Conditioning
+Contaminant Removal
+Separation & Drying
+FFA Management
 Transesterification (Catalytic Reaction)
 Enzyme-Esterification
-Acid-Esterification
-Glyserolsis (Esterification)
+Acid-esterification
+Glycerolsis (Esterification)
 Hydrotreating (RD only)
 Glycerol Separation
 Methanol Recovery
@@ -57,11 +70,13 @@ Biodiesel Storage Tanks [0330 Oil Storage]
 Glycerol Storage and Handling
 Truck Loading Systems [0390 Loading]
 Rail Loading Systems [0390 Loading]
+BRO Storage Tanks
+Co-product storage and handling
 0551 Steam Generation [0550 Steam]
 Vacuum Generation Systems
 0552 Steam Distribution [0550 Steam]
-Instrument and Utility Air [0630]
-0631 Utility Air Generation [0630 Instrument and Utility Air]
+[0630 Instrument and Utility Air]
+0631 Utilty Air Generation [0630 Instrument and Utility Air]
 0632 Utility Air Distribution [0630 Instrument and Utility Air]
 0633 Instrument Air Generation [0630 Instrument and Utility Air]
 0634 Instrument Air Distribution [0630 Instrument and Utility Air]
@@ -70,24 +85,25 @@ Instrument and Utility Air [0630]
 0831 Emergency Power Generation [0830 Emergency Power]
 0832 Emergency Power Distribution [0830 Emergency Power]
 HVAC and Building Services [0970 HVAC]
-Chemical Storage and Handling [0420 Chemical injection]
-Nitrogen
-Chemical Injection
+0421 Chemical Storage and Handling [0420 Chemical injection]
+[0480 Nitrogen]
+[0420 Chemical Injection]
 [0530 Utility Water]
 [1600 Waste Water Treatment]
 Stormwater and Oily Water Separation [0440 Oily water]
 [0660 Sewage Treatment]
+[0410 Heating Medium]
+ [0400 Cooling Medium]
 Distributed Control Systems (DCS)  [0870 Control (DCS/PCS)]
-Emergency Shutdown System (ESD)
-Fire and Gas Detection
-Firewater System
-Buildings and Civil Works  [0930 Architectural, Incl Workshop & Storage]
-Roads, Fencing, and Security
-Workshop and Maintenance Facilities [0930 Architectural, Incl Workshop & Storage]
+0791 ESD [0790 ESD and Blowdown (SIS)]
+[0700 Fire And Gas Detection]
+[0710 Fire Water]
+Buildings and Civil Works  [0900 structures]
+Roads, Fencing, and Security [0900 structures]
+Workshop and Maintenance Facilities [0900 structures]
 IT and Communications  [0860 Telecommunication]
 
-
-Other level 5.1 codes (square brackets explain the "series category", which can be used as a 5.1 code if necessary):
+Other available 5.1 codes (square brackets explain the "series category", which can be used as a 5.1 code as well):
 0011 Master Control System (MCS) [0010 Host Facility Located SS CNTRL SYST EQUIP]
 0012 Hydraulic Power Units (HPU) [0010 Host Facility Located SS CNTRL SYST EQUIP]
 0013 Electrical Power Unit (EPU) [0010 Host Facility Located SS CNTRL SYST EQUIP]
@@ -295,7 +311,7 @@ Other level 5.1 codes (square brackets explain the "series category", which can 
 4032 Marine [4030 Motorized Vehicles]
 4033 Land [4030 Motorized Vehicles]
 
-
+Level 6:
 Equipment might fall in a package for which it supports wholistically. For example a pump might not be given the "PUMP" package, because it is an oil pump supporting the compressor package, and instead is part of the "CMPR" package. The most appropriate package needs to be chosen.
 Use the following package codes for Level 6:
 VACM [Vacuum Systems]
@@ -430,6 +446,7 @@ WTDG [Water Degasser]
 WXIN [Wax Inhibitor]
 DSTL [Distillation Unit]
 
+Subclass:
 Pick from the following Subclass codes only:
 AM_MPLAN [Maintenance Plan Characteristic Grouping]
 AMACTY [Classification to group Cause Codes]
@@ -921,8 +938,7 @@ The same tag cannot be in multiple levels.
 Equipment records will have the following fields:
 Branch - internal database number
 Tag Number - short format for equipment tag
-Serial Number - This is unintuitive and is actually the long format for the equipment tag. USE THIS FIELD FOR LEVEL 6.1, LEVEL 7, or LEVEL 8.
-    Equipment from the plants all start with different abbreviations. Seneca: SE, Mason City: MC, Newton: NE, Albert Lea: AL, Danville: DA, Grays Harbor: GH, Emden: EM, Oeding: OE, Geismar GE, Ralston: RA, Emden-LCF: LC
+Serial Number - This is unintuitive and is actually the long format for the equipment tag. USE THIS FIELD FOR LEVEL 6.1, LEVEL 7, or LEVEL 8. Abreviations for plants are often found in equipment tags, which is often how the plant (level 4) can be determined. Equipment tags often start with the plant abbreviation - Seneca: SE, Mason City: MC, Newton: NE, Albert Lea: AL, Danville: DA, Grays Harbor: GH, Emden: EM, Oeding: OE, Geismar GE, Ralston: RA, Emden-LCF: LC. BE CAREFUL NOT TO MIX UP Geismar ("GE") and Grays Grays harbor ("GH").
 Description - information about the equipment. typically noun followed by descriptor
 Description 2 - Additional information unstructured
 Description 3 - Model or serial number information if available
@@ -940,11 +956,11 @@ Cat 7 Desc - criticality label
 Mfg - abbreviation used for the equipment manufacturer
 Mdl Yr Desc - full year of the equipment model
 
-Task: For a given equipment record:
+Task: For a given equipment record (examples of inputs are below)
 - Determine the correct subclass code.
 - Determine the correct hierarchy level and assign the equipment tag to that level (from Level 3 to Level 8).
-- Assign the correct System that the equipement should fall under (level 5).
-- Assign the correct Subsystem (Level 5.1) Prioritize options from the level 5.1 codes. Use a legacy subsystem code or create a new one if applicable.
+- Assign the correct System that the equipment should fall under (level 5).
+- Assign the correct Subsystem (Level 5.1) and prioritize options from the level 5.1 codes. Use a legacy subsystem code or create a new one if applicable.
 - Assign a package code or create a new one if it is deemed more appropriate (Level 6).
 - Ensure the equipment is placed in the correct train or common facility (Level 4.1).
 - Ensure each equipment item appears only once in the hierarchy.
