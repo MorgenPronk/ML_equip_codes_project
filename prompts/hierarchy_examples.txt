@@ -1,0 +1,466 @@
+Below are examples of inputs and outputs
+
+Example 1 Input:
+{"Branch": np.int64(712420), "Tag Number": "SEA-HX-203", "Serial Number": "SE-A-HX-203", "Description": "PARTIAL CONDENSER", "Description 2": "PARTIAL CONDENSER", "Description 3": "PARTIAL CONDENSER", "Equipment Number": np.int64(19807), "Remark": " ", "Remarks Line 2": "Process Building", "Mfg Desc": ".", "Product Family": "VSL", "Product Model": "HEST", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Heat Exchangers", "Mdl Yr": " ", "Use M/H Desc": "Glycerolysis", "Cat 6 Desc": "Reaction", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "40", "Mdl Yr Desc": ".", "Column1": np.int64(34), "Column2": np.int64(7059)}
+
+Example 1 Output:
+ {
+    "level 4"  : "SE",
+    "level 4.1"  : "TRA",
+    "level 5"  : "CHCV",
+    "level 5.1"  : "0012",
+    "level 6"  : "EXCH",
+    "level 6.1"  : "SE-A-HX-203",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "HEST"
+ }
+
+Example 2 Input:
+{"Branch": np.int64(712420), "Tag Number": "SEA-HX-205", "Serial Number": "SE-A-HX-205", "Description": "SECONDARY CONDENSER", "Description 2": "SECONDARY CONDENSER", "Description 3": "SECONDARY CONDENSER", "Equipment Number": np.int64(19809), "Remark": " ", "Remarks Line 2": "Process Building", "Mfg Desc": ".", "Product Family": "VSL", "Product Model": "HEST", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Heat Exchangers", "Mdl Yr": " ", "Use M/H Desc": "Vacuum System", "Cat 6 Desc": "Vacuum System", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "40", "Mdl Yr Desc": ".", "Column1": np.int64(38), "Column2": np.int64(7059)}
+
+Example 2 Output:
+ {
+    "level 4"  : "SE",
+    "level 4.1"  : "TRA",
+    "level 5"  : "CHCV",
+    "level 5.1"  : "0012",
+    "level 6"  : "EXCH",
+    "level 6.1"  : "SE-A-HX-205",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "HEST"
+ }
+
+Example 3 Input:
+{"Branch": np.int64(712420), "Tag Number": "SEA-P-205", "Serial Number": "SE-A-P-205", "Description": "ET VACUUM CONDENSATE PUMP", "Description 2": "LVP41017U-D", "Description 3": "ET VACUUM CONDENSATE PUMP", "Equipment Number": np.int64(19965), "Remark": " ", "Remarks Line 2": "Process Building", "Mfg Desc": ".", "Product Family": "PMP", "Product Model": "PDSL", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Pumps", "Mdl Yr": " ", "Use M/H Desc": "Glycerolysis", "Cat 6 Desc": "Reaction", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "60", "Mdl Yr Desc": ".", "Column1": np.int64(36), "Column2": np.int64(7059)}
+
+Example 3 Output:
+ {
+    "level 4"  : "SE",
+    "level 4.1"  : "TRA",
+    "level 5"  : "CHCV",
+    "level 5.1"  : "0012",
+    "level 6"  : "PUMP",
+    "level 6.1"  : "SE-A-P-205",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "PDRO"
+ }
+
+Example 4 Input:
+{"Branch": np.int64(712420), "Tag Number": "SEB-HX-203", "Serial Number": "SE-B-HX-203", "Description": "ET PARTIAL CONDENSER", "Description 2": "ET PARTIAL CONDENSER", "Description 3": "ET PARTIAL CONDENSER", "Equipment Number": np.int64(20932), "Remark": " ", "Remarks Line 2": "Process Building", "Mfg Desc": ".", "Product Family": "VSL", "Product Model": "HEST", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Heat Exchangers", "Mdl Yr": " ", "Use M/H Desc": "Glycerolysis", "Cat 6 Desc": "Reaction", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "40", "Mdl Yr Desc": ".", "Column1": np.int64(40), "Column2": np.int64(7059)}
+
+Example 4 Output:
+ {
+    "level 4"  : "SE",
+    "level 4.1"  : "TRB",
+    "level 5"  : "CHCV",
+    "level 5.1"  : "0012",
+    "level 6"  : "EXCH",
+    "level 6.1"  : "SE-B-HX-203",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "HEST"
+ }
+
+Example 5 Input:
+{"Branch": np.int64(706420), "Tag Number": "DA540C2", "Serial Number": "DA-540-C-2", "Description": "COLUMN, DISTILLATION DRYING", "Description 2": " ", "Description 3": "540-C-2 BUDAN 6", "Equipment Number": np.int64(35124), "Remark": " ", "Remarks Line 2": " ", "Mfg Desc": ".", "Product Family": "VSL", "Product Model": "DISC", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Vessels and Tanks", "Mdl Yr": " ", "Use M/H Desc": "Distillation", "Cat 6 Desc": "Methyl Ester Drying", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "80", "Mdl Yr Desc": ".", "Column1": np.int64(28), "Column2": np.int64(7059)}
+
+Example 5 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "TRA",
+    "level 5"  : "PRRF",
+    "level 5.1"  : "0016",
+    "level 6"  : "VSSL",
+    "level 6.1"  : "DA-540-C-2",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "VECO"
+ }
+
+Example 6 Input:
+{"Branch": np.int64(706420), "Tag Number": "DA540E11A", "Serial Number": "DA-540-E-11-A", "Description": "ECONOMIZER", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(35132), "Remark": "DA-540-E-11A", "Remarks Line 2": " ", "Mfg Desc": ".", "Product Family": "VSL", "Product Model": "HEST", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Heat Exchangers", "Mdl Yr": " ", "Use M/H Desc": "Distillation", "Cat 6 Desc": "Methyl Ester Drying", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "40", "Mdl Yr Desc": ".", "Column1": np.int64(11), "Column2": np.int64(7059)}
+
+Example 6 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "TRA",
+    "level 5"  : "PRRF",
+    "level 5.1"  : "0016",
+    "level 6"  : "EXCH",
+    "level 6.1"  : "DA-540-E-11-A",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "HEST"
+ }
+
+Example 7 Input:
+{"Branch": np.int64(706420), "Tag Number": "DA540E11B", "Serial Number": "DA-540-E-11-B", "Description": "ECONOMIZER", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(35133), "Remark": "DA-540-E-11B", "Remarks Line 2": " ", "Mfg Desc": ".", "Product Family": "VSL", "Product Model": "HEST", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Heat Exchangers", "Mdl Yr": " ", "Use M/H Desc": "Distillation", "Cat 6 Desc": "Methyl Ester Drying", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "40", "Mdl Yr Desc": ".", "Column1": np.int64(11), "Column2": np.int64(7059)}
+
+Example 7 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "TRA",
+    "level 5"  : "PRRF",
+    "level 5.1"  : "0016",
+    "level 6"  : "EXCH",
+    "level 6.1"  : "DA-540-E-11-B",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "HEST"
+ }
+
+Example 8 Input:
+{"Branch": np.int64(706420), "Tag Number": "DA540C1", "Serial Number": "DA-540-C-1", "Description": "COLUMN, DISTILLATION", "Description 2": " ", "Description 3": "540-C-1/540-CF-1", "Equipment Number": np.int64(35123), "Remark": " ", "Remarks Line 2": " ", "Mfg Desc": ".", "Product Family": "VSL", "Product Model": "DISC", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Vessels and Tanks", "Mdl Yr": " ", "Use M/H Desc": "Distillation", "Cat 6 Desc": "Methyl Ester Stripper", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "80", "Mdl Yr Desc": ".", "Column1": np.int64(21), "Column2": np.int64(7059)}
+
+Example 8 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "TRA",
+    "level 5"  : "PRRF",
+    "level 5.1"  : "0016",
+    "level 6"  : "VSSL",
+    "level 6.1"  : "DA-540-C-1",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "VECO"
+ }
+
+Example 9 Input:
+{"Branch": np.int64(706420), "Tag Number": "DATF001P", "Serial Number": "DA-TF-001-P", "Description": "TANK, THERMAL FLUID SKID 1", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(35793), "Remark": "1028327862", "Remarks Line 2": " ", "Mfg Desc": ".", "Product Family": "PMP", "Product Model": "CENAPI", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Outside Tanks", "Mdl Yr": " ", "Use M/H Desc": "Distillation", "Cat 6 Desc": "Hot Oil", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "90", "Mdl Yr Desc": ".", "Column1": np.int64(27), "Column2": np.int64(7059)}
+
+Example 9 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "CMN",
+    "level 5"  : "UTFS",
+    "level 5.1"  : "0410",
+    "level 6"  : "PUMP",
+    "level 6.1"  : "DA-TF-001-P",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "PUCE"
+ }
+
+Example 10 Input:
+{"Branch": np.int64(706420), "Tag Number": "DAP5407", "Serial Number": "DA-P-540-7", "Description": "PUMP, 540-P-7 THERMAL FLUID TO", "Description 2": "540-E-2", "Description 3": "HL5365R02U3", "Equipment Number": np.int64(35569), "Remark": " ", "Remarks Line 2": " ", "Mfg Desc": ".", "Product Family": "PMP", "Product Model": "CENAPI", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Pumps", "Mdl Yr": " ", "Use M/H Desc": "Distillation", "Cat 6 Desc": "Hot Oil", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "60", "Mdl Yr Desc": ".", "Column1": np.int64(37), "Column2": np.int64(7059)}
+
+Example 10 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "CMN",
+    "level 5"  : "UTFS",
+    "level 5.1"  : "0410",
+    "level 6"  : "PUMP",
+    "level 6.1"  : "DA-P-540-7",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "PUCE"
+ }
+
+Example 11 Input:
+{"Branch": np.int64(706420), "Tag Number": "DAP1150", "Serial Number": "DA-P-1150", "Description": "PUMP, DISTILLATION BOTTOMS", "Description 2": "TANK", "Description 3": " ", "Equipment Number": np.int64(35552), "Remark": "DA-P_1150", "Remarks Line 2": " ", "Mfg Desc": ".", "Product Family": "PMP", "Product Model": "CENAPI", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Pumps", "Mdl Yr": " ", "Use M/H Desc": "Tank Farm", "Cat 6 Desc": "Finished Product", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "60", "Mdl Yr Desc": ".", "Column1": np.int64(30), "Column2": np.int64(7059)}
+
+Example 11 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "TRA",
+    "level 5"  : "SGDS",
+    "level 5.1"  : "0026",
+    "level 6"  : "PUMP",
+    "level 6.1"  : "DA-P-1150",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "PDRO"
+ }
+
+Example 12 Input:
+{"Branch": np.int64(706420), "Tag Number": "DAP901", "Serial Number": "DA-P-901", "Description": "PUMP, COOLING TOWER", "Description 2": " ", "Description 3": "A40-6624-0494", "Equipment Number": np.int64(35582), "Remark": "A1509252002", "Remarks Line 2": " ", "Mfg Desc": ".", "Product Family": "PMP", "Product Model": "CENB73", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Pumps", "Mdl Yr": " ", "Use M/H Desc": "Distillation", "Cat 6 Desc": "Cooling Water", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "60", "Mdl Yr Desc": ".", "Column1": np.int64(20), "Column2": np.int64(7059)}
+
+Example 12 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "CMN",
+    "level 5"  : "UTFS",
+    "level 5.1"  : "0400",
+    "level 6"  : "PUMP",
+    "level 6.1"  : "DA-P-901",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "PUCE"
+ }
+
+Example 13 Input:
+{"Branch": np.int64(706420), "Tag Number": "DAP900", "Serial Number": "DA-P-900", "Description": "PUMP, COOLING TOWER", "Description 2": " ", "Description 3": "A40-6624-0494", "Equipment Number": np.int64(35577), "Remark": "A1509252003", "Remarks Line 2": " ", "Mfg Desc": ".", "Product Family": "PMP", "Product Model": "CENB73", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Pumps", "Mdl Yr": " ", "Use M/H Desc": "Distillation", "Cat 6 Desc": "Cooling Water", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "60", "Mdl Yr Desc": ".", "Column1": np.int64(20), "Column2": np.int64(7059)}
+
+Example 13 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "CMN",
+    "level 5"  : "UTFS",
+    "level 5.1"  : "0400",
+    "level 6"  : "PUMP",
+    "level 6.1"  : "DA-P-900",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "PUCE"
+ }
+
+Example 14 Input:
+{"Branch": np.int64(706420), "Tag Number": "DAP811", "Serial Number": "DA-P-811", "Description": "PUMP, CHILLED FLUID", "Description 2": " ", "Description 3": "10H29Z43761", "Equipment Number": np.int64(36336), "Remark": "C1510160707", "Remarks Line 2": " ", "Mfg Desc": "GOULDS", "Product Family": "PMP", "Product Model": "CENB73", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Pumps", "Mdl Yr": " ", "Use M/H Desc": "Distillation", "Cat 6 Desc": "Cooling Water", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": "GOU", "Acc Cls": np.int64(50), "Eqm Cls": "60", "Mdl Yr Desc": ".", "Column1": np.int64(20), "Column2": np.int64(7059)}
+
+Example 14 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "CMN",
+    "level 5"  : "UTFS",
+    "level 5.1"  : "0400",
+    "level 6"  : "PUMP",
+    "level 6.1"  : "DA-P-811",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "PUCE"
+ }
+
+Example 15 Input:
+{"Branch": np.int64(706420), "Tag Number": "DAET811", "Serial Number": "DA-ET-811", "Description": "TANK, CHILLED WATER EXPANSION", "Description 2": " ", "Description 3": "409176", "Equipment Number": np.int64(36249), "Remark": " ", "Remarks Line 2": " ", "Mfg Desc": ".", "Product Family": "TNK", "Product Model": "PRCS", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Tanks", "Mdl Yr": " ", "Use M/H Desc": "Distillation", "Cat 6 Desc": "Cooling Water", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "200", "Mdl Yr Desc": ".", "Column1": np.int64(30), "Column2": np.int64(7059)}
+
+Example 15 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "CMN",
+    "level 5"  : "UTFS",
+    "level 5.1"  : "0400",
+    "level 6"  : "VSSL",
+    "level 6.1"  : "DA-ET-811",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "VEDV"
+ }
+
+Example 16 Input:
+{"Branch": np.int64(706420), "Tag Number": "DAME3103", "Serial Number": "DA-ME-3103", "Description": "SEPARATOR, STEAM ME-3103", "Description 2": "BURNHAM BOILER", "Description 3": " ", "Equipment Number": np.int64(36047), "Remark": "DA-ME-3103", "Remarks Line 2": " ", "Mfg Desc": "BURNHAM COMMERCIAL BOILERS", "Product Family": "VSL", "Product Model": "SEPAR", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Vessels and Tanks", "Mdl Yr": " ", "Use M/H Desc": "Utilities", "Cat 6 Desc": "Boiler/Steam", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": "BCB", "Acc Cls": np.int64(50), "Eqm Cls": "80", "Mdl Yr Desc": ".", "Column1": np.int64(38), "Column2": np.int64(7059)}
+
+Example 16 Output:
+ {
+    "level 4"  : "DA",
+    "level 4.1"  : "CMN",
+    "level 5"  : "UTFS",
+    "level 5.1"  : "0551",
+    "level 6"  : "BOIL",
+    "level 6.1"  : "DA-ME-3103",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "HBDF"
+ }
+
+Example 17 Input:
+{"Branch": np.int64(717420), "Tag Number": "GH220T3200", "Serial Number": "GH-220-T-3200", "Description": "TNK, CRUDE GLYCERIN SURGE STAN", "Description 2": "D PIPE", "Description 3": " ", "Equipment Number": np.int64(33931), "Remark": " ", "Remarks Line 2": "PQ-024", "Mfg Desc": "SUPERIOR STEEL PRODUCTS INC.", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Tanks", "Mdl Yr": " ", "Use M/H Desc": "Transterification", "Cat 6 Desc": "Reaction", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "PSM Covered Process Equipment", "Installation Date": "", "Mfg": "SSP", "Acc Cls": np.int64(50), "Eqm Cls": "200", "Mdl Yr Desc": ".", "Column1": np.int64(36), "Column2": np.int64(7059)}
+
+Example 17 Output:
+ {
+    "level 4"  : "GH",
+    "level 4.1"  : "TRA",
+    "level 5"  : "CHCV",
+    "level 5.1"  : "0015",
+    "level 6"  : "TANK",
+    "level 6.1"  : "GH-220-T-3200",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "TASX"
+ }
+
+Example 18 Input:
+{"Branch": np.int64(717420), "Tag Number": "GH210T3000", "Serial Number": "GH-210-T-3000", "Description": "TNK, DECANTER ZERO", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(33890), "Remark": " ", "Remarks Line 2": "PQ-021-1", "Mfg Desc": "TBAILEY INC.", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Tanks", "Mdl Yr": " ", "Use M/H Desc": "Transterification", "Cat 6 Desc": "Oil Drying", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "PSM Covered Process Equipment", "Installation Date": "", "Mfg": "TBI", "Acc Cls": np.int64(50), "Eqm Cls": "200", "Mdl Yr Desc": ".", "Column1": np.int64(19), "Column2": np.int64(7059)}
+
+Example 18 Output:
+ {
+    "level 4"  : "GH",
+    "level 4.1"  : "TRA",
+    "level 5"  : "PRTR",
+    "level 5.1"  : "0007",
+    "level 6"  : "TANK",
+    "level 6.1"  : "GH-210-T-3000",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "TAFR"
+ }
+
+Example 19 Input:
+{"Branch": np.int64(717420), "Tag Number": "GH210P3030", "Serial Number": "GH-210-P-3030", "Description": "PUMP, D0 GLYCERIN", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(33895), "Remark": " ", "Remarks Line 2": "PQ-021-1", "Mfg Desc": ".", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Pumps", "Mdl Yr": " ", "Use M/H Desc": "Transterification", "Cat 6 Desc": "Oil Drying", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "PSM Covered Process Equipment", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "60", "Mdl Yr Desc": ".", "Column1": np.int64(18), "Column2": np.int64(7059)}
+
+Example 19 Output:
+ {
+    "level 4"  : "GH",
+    "level 4.1"  : "TRA",
+    "level 5"  : "PRTR",
+    "level 5.1"  : "0007",
+    "level 6"  : "PUMP",
+    "level 6.1"  : "GH-210-P-3030",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "PDRO"
+ }
+
+Example 20 Input:
+{"Branch": np.int64(717420), "Tag Number": "GH210P3020", "Serial Number": "GH-210-P-3020", "Description": "PUMP, D0 VEGETABLE OIL", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(33894), "Remark": " ", "Remarks Line 2": "PQ-021-1", "Mfg Desc": "FLOWSERVE", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Pumps", "Mdl Yr": " ", "Use M/H Desc": "Transterification", "Cat 6 Desc": "Oil Drying", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "PSM Covered Process Equipment", "Installation Date": "", "Mfg": "FLV", "Acc Cls": np.int64(50), "Eqm Cls": "60", "Mdl Yr Desc": ".", "Column1": np.int64(23), "Column2": np.int64(7059)}
+
+Example 20 Output:
+ {
+    "level 4"  : "GH",
+    "level 4.1"  : "TRA",
+    "level 5"  : "PRTR",
+    "level 5.1"  : "0007",
+    "level 6"  : "PUMP",
+    "level 6.1"  : "GH-210-P-3020",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "PUCE"
+ }
+
+Example 21 Input:
+{"Branch": np.int64(717420), "Tag Number": "GH210EX2010", "Serial Number": "GH-210-EX-2010", "Description": "EXCHANGER, RAW OIL COOLER #1", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(33885), "Remark": " ", "Remarks Line 2": "PQ-021-1", "Mfg Desc": ".", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Heat Exchangers", "Mdl Yr": " ", "Use M/H Desc": "Transterification", "Cat 6 Desc": "Oil Drying", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "PSM Covered Process Equipment", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "40", "Mdl Yr Desc": ".", "Column1": np.int64(29), "Column2": np.int64(7059)}
+
+Example 21 Output:
+ {
+    "level 4"  : "GH",
+    "level 4.1"  : "TRA",
+    "level 5"  : "PRTR",
+    "level 5.1"  : "0007",
+    "level 6"  : "EXCH",
+    "level 6.1"  : "GH-210-EX-2010",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "HEST"
+ }
+
+Example 22 Input:
+{"Branch": np.int64(717420), "Tag Number": "GH220T2500", "Serial Number": "GH-220-T-2500", "Description": "TNK, 2ND STG REACTOR FLASH", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(33919), "Remark": " ", "Remarks Line 2": "PQ-023", "Mfg Desc": "SUPERIOR STEEL PRODUCTS INC.", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Tanks", "Mdl Yr": " ", "Use M/H Desc": "Transterification", "Cat 6 Desc": "Reaction", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "PSM Covered Process Equipment", "Installation Date": "", "Mfg": "SSP", "Acc Cls": np.int64(50), "Eqm Cls": "200", "Mdl Yr Desc": ".", "Column1": np.int64(27), "Column2": np.int64(7059)}
+
+Example 22 Output:
+ {
+    "level 4"  : "GH",
+    "level 4.1"  : "TRA",
+    "level 5"  : "CHCV",
+    "level 5.1"  : "0015",
+    "level 6"  : "TANK",
+    "level 6.1"  : "GH-220-T-2500",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "VEDV"
+ }
+
+Example 23 Input:
+{"Branch": np.int64(717420), "Tag Number": "GH220P2650", "Serial Number": "GH-220-P-2650", "Description": "PUMP, 2ND STG REACTOR FLASH", "Description 2": "TNK", "Description 3": " ", "Equipment Number": np.int64(33916), "Remark": " ", "Remarks Line 2": "PQ-023", "Mfg Desc": "FLOWSERVE", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Pumps", "Mdl Yr": " ", "Use M/H Desc": "Transterification", "Cat 6 Desc": "Reaction", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "PSM Covered Process Equipment", "Installation Date": "", "Mfg": "FLV", "Acc Cls": np.int64(50), "Eqm Cls": "60", "Mdl Yr Desc": ".", "Column1": np.int64(30), "Column2": np.int64(7059)}
+
+Example 23 Output:
+ {
+    "level 4"  : "GH",
+    "level 4.1"  : "TRA",
+    "level 5"  : "CHCV",
+    "level 5.1"  : "0015",
+    "level 6"  : "PUMP",
+    "level 6.1"  : "GH-220-P-2650",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "PUCE"
+ }
+
+Example 24 Input:
+{"Branch": np.int64(717420), "Tag Number": "GH220EX2400", "Serial Number": "GH-220-EX-2400", "Description": "EXCHANGER, 2ND STG REACTOR", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(33915), "Remark": " ", "Remarks Line 2": "PQ-023", "Mfg Desc": ".", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Heat Exchangers", "Mdl Yr": " ", "Use M/H Desc": "Transterification", "Cat 6 Desc": "Reaction", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "PSM Covered Process Equipment", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "40", "Mdl Yr Desc": ".", "Column1": np.int64(27), "Column2": np.int64(7059)}
+
+Example 24 Output:
+ {
+    "level 4"  : "GH",
+    "level 4.1"  : "TRA",
+    "level 5"  : "CHCV",
+    "level 5.1"  : "0015",
+    "level 6"  : "EXCH",
+    "level 6.1"  : "GH-220-EX-2400",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "HEST"
+ }
+
+Example 25 Input:
+{"Branch": np.int64(717420), "Tag Number": "GH850T1500", "Serial Number": "GH-850-T-1500", "Description": "TNK, AIR RECEIVER #1", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(34093), "Remark": " ", "Remarks Line 2": "PQ-1923", "Mfg Desc": "SILVAN INDUSTRIES INC.", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Vessels", "Mdl Yr": " ", "Use M/H Desc": "Utilities", "Cat 6 Desc": "Plant Air", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": "SII", "Acc Cls": np.int64(50), "Eqm Cls": "190", "Mdl Yr Desc": ".", "Column1": np.int64(21), "Column2": np.int64(7059)}
+
+Example 25 Output:
+ {
+    "level 4"  : "GH",
+    "level 4.1"  : "CMN",
+    "level 5"  : "UTFS",
+    "level 5.1"  : "0634",
+    "level 6"  : "VSSL",
+    "level 6.1"  : "GH-850-T-1500",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "VEDV"
+ }
+
+Example 26 Input:
+{"Branch": np.int64(717420), "Tag Number": "GH820P1040", "Serial Number": "GH-820-P-1040", "Description": "PUMP, HOT OIL NO. 2", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(34037), "Remark": " ", "Remarks Line 2": "PQ-085", "Mfg Desc": ".", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Pumps", "Mdl Yr": " ", "Use M/H Desc": "Utilities", "Cat 6 Desc": "Hot Oil", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "60", "Mdl Yr Desc": ".", "Column1": np.int64(20), "Column2": np.int64(7059)}
+
+Example 26 Output:
+ {
+    "level 4"  : "GH",
+    "level 4.1"  : "CMN",
+    "level 5"  : "UTFS",
+    "level 5.1"  : "0410",
+    "level 6"  : "PUMP",
+    "level 6.1"  : "GH-820-P-1040",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "PUCE"
+ }
+
+Example 27 Input:
+{"Branch": np.int64(717420), "Tag Number": "GH832CT1000", "Serial Number": "GH-832-CT-1000", "Description": "TOWER, COOLING", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(34084), "Remark": " ", "Remarks Line 2": "PQ-110", "Mfg Desc": "GEA POLACEL", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Other Misc", "Mdl Yr": " ", "Use M/H Desc": "Utilities", "Cat 6 Desc": "Cooling Water", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": "GEA", "Acc Cls": np.int64(50), "Eqm Cls": "99", "Mdl Yr Desc": ".", "Column1": np.int64(15), "Column2": np.int64(7059)}
+
+Example 27 Output:
+ {
+    "level 4"  : "GH",
+    "level 4.1"  : "CMN",
+    "level 5"  : "UTFS",
+    "level 5.1"  : "0530",
+    "level 6"  : "CLTW",
+    "level 6.1"  : "GH-832-CT-1000",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "CTCT"
+ }
+
+Example 28 Input:
+{"Branch": np.int64(711420), "Tag Number": "NEC213", "Serial Number": "NE-C-213", "Description": "SEPARATOR, PRE-TREATMENT", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(38703), "Remark": " ", "Remarks Line 2": "421", "Mfg Desc": ".", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Vessels", "Mdl Yr": " ", "Use M/H Desc": "Pretreat", "Cat 6 Desc": "                             .", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "190", "Mdl Yr Desc": ".", "Column1": np.int64(25), "Column2": np.int64(7059)}
+
+Example 28 Output:
+ {
+    "level 4"  : "NE",
+    "level 4.1"  : "TRA",
+    "level 5"  : "PRTR",
+    "level 5.1"  : "0007",
+    "level 6"  : "CTFG",
+    "level 6.1"  : "NE-C-213",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "CFDS"
+ }
+
+Example 29 Input:
+{"Branch": np.int64(711420), "Tag Number": "NEV210", "Serial Number": "NE-V-210", "Description": "REACTOR, PRE-TREATMENT", "Description 2": " ", "Description 3": " ", "Equipment Number": np.int64(38695), "Remark": " ", "Remarks Line 2": "421", "Mfg Desc": ".", "Product Family": " ", "Product Model": " ", "Acc Cls Desc": "Plant Equipment", "Eqm Cls Desc": "Vessels", "Mdl Yr": " ", "Use M/H Desc": "Pretreat", "Cat 6 Desc": "                             .", "Cat 7": " ", "Cat 7 Desc": "                             .", "Cat 8 Desc": "12/C8 Blank", "Installation Date": "", "Mfg": " ", "Acc Cls": np.int64(50), "Eqm Cls": "190", "Mdl Yr Desc": ".", "Column1": np.int64(23), "Column2": np.int64(7059)}
+
+Example 29 Output:
+ {
+    "level 4"  : "NE",
+    "level 4.1"  : "TRA",
+    "level 5"  : "PRTR",
+    "level 5.1"  : "0005",
+    "level 6"  : "VSSL",
+    "level 6.1"  : "NE-V-210",
+    "level 7"  : "",
+    "level 8"  : "",
+    "subclass"  : "VERE"
+ }
+

@@ -54,10 +54,12 @@ class Hierarchy_output(BaseModel):
 
 print("reading instructions...")
 # Get the system prompt from a text file
-with open("system_prompt.txt", "r") as file:
+system_prompt_path = os.path.join("prompts", "system_prompt.txt")
+with open(system_prompt_path, "r") as file:
     system_prompt = file.read()
 
-with open("hierarchy_examples.txt", "r") as file:
+hierarchy_examples_path = os.path.join("prompts", "hierarchy_examples.txt")
+with open(hierarchy_examples_path, "r") as file:
     hierarchy_examples = file.read()
 
 def convert(obj):
@@ -207,7 +209,7 @@ def loop_equipment(xl_path, jsonl_path, start_index=0):
                 log_error(error_message)
                 continue
 
-def jsonl_to_excel(jsonl_path, excel_path, error_log_path):
+def jsonl_to_excel(jsonl_path, excel_path):
     """
     Convert the JSONL file to an Excel file.
     """
@@ -231,13 +233,13 @@ def main():
     Main function to run the script.
     """
     # Define the paths for the input Excel file and output JSONL file
-    xl_path = "Current JDE Equipment Table 6-2-25.xlsx" #equipment_data.xlsx"
-    jsonl_path = "hierarchy_output.jsonl"
-    excel_output_path = "hierarchy_output.xlsx"
-    error_log_path = "error_log.txt"
+    xl_path = os.path.join("data", "Current JDE Equipment Table 6-2-25.xlsx") # equipment_data.xlsx"
+    jsonl_path = os.path.join("outputs", "hierarchy_output.jsonl") # "hierarchy_output.jsonl"
+    excel_output_path = os.path.join("outputs", "hierarchy_output.xlsx") # "hierarchy_output.xlsx"
+    error_log_path = os.path.join("logs", "error_log.txt") # "error_log.txt"
 
     # Loop through the equipment records and generate hierarchy
-    loop_equipment(xl_path, jsonl_path)
+    loop_equipment(xl_path, jsonl_path, 0)
 
     # Convert the JSONL file to an Excel file
     jsonl_to_excel(jsonl_path, excel_output_path)
