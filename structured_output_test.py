@@ -1,5 +1,5 @@
 print("importing libraries...")
-from pydantic import BaseModel, ValidationError, Field
+from pydantic import BaseModel, ValidationError, Field, constr
 from openai import AzureOpenAI
 import pandas as pd
 import json
@@ -39,18 +39,20 @@ client = AzureOpenAI(
 #     subclass: str
 
 class Hierarchy_output(BaseModel):
-    level_4: str = Field(alias="level 4")
-    level_4_1: str = Field(alias="level 4.1")
-    level_5: str = Field(alias="level 5")
-    level_5_1: str = Field(alias="level 5.1")
-    level_6: str = Field(alias="level 6")
-    level_6_1: str = Field(alias="level 6.1")
-    level_7: str = Field(alias="level 7")
-    level_8: str = Field(alias="level 8")
+    level_4: constr(min_length=2, max_length=2, regex="^[A-Za-z]{2}$") = Field(alias="level 4")
+    level_4_1: constr(min_length=3, max_length=3, regex="^[A-Za-z0-9]{3}$") = Field(alias="level 4.1")
+    level_5: constr(min_length=4, max_length=4, regex="^[A-Za-z]{4}$") = Field(alias="level 5")
+    level_5_1: constr(min_length=4, max_length=4, regex="^\d{4}$") = Field(alias="level 5.1")
+    level_6: constr(min_length=4, max_length=4, regex="^[A-Za-z]{4}$") = Field(alias="level 6")
+    level_6_1: str = Field(alias="level 6.1")  # Add rules if needed
+    level_7: str = Field(alias="level 7")      # Add rules if needed
+    level_8: str = Field(alias="level 8")      # Add rules if needed
     subclass: str
 
     class Config:
-        populate_by_name = True  # Allows using either alias or field name
+        populate_by_name = True
+        extra = "forbid"
+
 
 print("reading instructions...")
 # Get the system prompt from a text file
