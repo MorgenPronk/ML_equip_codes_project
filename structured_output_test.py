@@ -11,10 +11,6 @@ from tqdm import tqdm
 print("loading environment variables...")
 load_dotenv() # Load environment variables from .env file
 
-
-# Will hardcode the API and Endpoint for now
-# Get the model and endpoint from environment variables
-# The model, api_version, api key, and endpoint_url should be set in the .env file because they are all unique to the model used.
 API_key = os.getenv("API_key")
 endpoint_url = os.getenv("endpoint_url")
 deployment = os.getenv("deployment")
@@ -87,7 +83,7 @@ def convert(obj):
 #     }
 #     return {mapping.get(k, k): v for k, v in data.items()}
 
-def generate_hierarchy_with_rety(record_str, system_prompt=system_prompt, hierarchy_examples=hierarchy_examples):
+def generate_hierarchy_with_retry(record_str, system_prompt=system_prompt, hierarchy_examples=hierarchy_examples):
     # First attempt to generate hierarchy
     response = client.chat.completions.create(
         model=deployment,
@@ -173,7 +169,7 @@ def loop_equipment(xl_path, jsonl_path, start_index=0):
             record_str = json.dumps(record_dict, default=convert)
 
             log_error(f"---INDEX {index} - Generating hierarchy for record with AI---")
-            hierarchy = generate_hierarchy_with_rety(record_str, system_prompt, hierarchy_examples)
+            hierarchy = generate_hierarchy_with_retry(record_str, system_prompt, hierarchy_examples)
             # try:
             #     # Get row information
             #     record_dict = row.to_dict()
